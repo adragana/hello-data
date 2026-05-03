@@ -5,7 +5,6 @@
 This project processes raw game events and map metadata, cleans the data, stores it in a **SQLite** database, and exposes a **REST API** for user and map statistics.
 Interactive line chart (Plotly) visualises match counts over the last 7 days per map.
 
----
 
 ## Approach
 
