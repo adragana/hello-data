@@ -261,3 +261,6 @@ http://127.0.0.1:5000/chart
 ```
 
 > Use `/maps` first to see which map names are available in the database.
+
+
+> Author: Dragana Andjelkovic
