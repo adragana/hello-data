@@ -92,7 +92,7 @@ golf-rival/
 
 ## Installation & Setup
 
-### Prerequisites
+### Requirements
 
 - Python 3.9+
 - SQLite ≥ 3.38 (required for the `unixepoch` modifier - included with Python 3.9+ on most systems)
