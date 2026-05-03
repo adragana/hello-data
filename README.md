@@ -5,7 +5,6 @@
 This project processes raw game events and map metadata, cleans the data, stores it in a **SQLite** database, and exposes a **REST API** for user and map statistics.
 Interactive line chart (Plotly) visualises match counts over the last 7 days per map.
 
----
 
 ## Approach
 
@@ -93,7 +92,7 @@ golf-rival/
 
 ## Installation & Setup
 
-### Prerequisites
+### Requirements
 
 - Python 3.9+
 - SQLite ≥ 3.38 (required for the `unixepoch` modifier - included with Python 3.9+ on most systems)
