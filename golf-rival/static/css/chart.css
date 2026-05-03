@@ -1,0 +1,89 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Helvetica', system-ui, sans-serif;
+    color: #e5e7eb;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-image: linear-gradient(rgba(36, 33, 38, 0.612), rgba(27, 22, 34, 0.651)), url('../images/s2.jpg');
+    background-size: cover;       
+    background-position: center;   
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+}
+
+.card {
+    background: rgba(32, 16, 51, 0.777);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 10px;
+    padding: 40px;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.652);
+    backdrop-filter: blur(10px);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 6px;
+}
+
+
+
+h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #d9b5fd;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    background: rgba(30, 18, 60, 0.6);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 14px;
+    padding: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    background-color: rgba(76, 28, 135, 0.3);
+    box-shadow: 
+        0 0 15px rgba(179, 92, 246, 0.5),
+        0 0 40px rgba(149, 99, 241, 0.2);
+    transform: translateY(-3px);
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #e6ceff;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #a1a1aa;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+
+#plotly-chart {
+    width: 100%;
+    height: 430px;
+    border-radius: 16px;
+    overflow: hidden;
+}

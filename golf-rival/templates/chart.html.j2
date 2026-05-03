@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf Rival - Match Stats</title>
+
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+
+    <!-- CSS   -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chart.css') }}">
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+           
+            <h1>Golf Rival Analytics</h1>
+        </div>
+
+        <div class="stats-row">
+            {% for s in stats %}
+            <div class="stat-card">
+                <div class="stat-value" style="color: {{ s.color }}">{{ s.total }}</div>
+                <div class="stat-label">{{ s.name }}</div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        <div id="plotly-chart"></div>
+    </div>
+
+    <script>
+        const traces = {{ traces | tojson }};
+
+        const layout = {
+            paper_bgcolor: "transparent",
+            plot_bgcolor: "#21163c",
+            font: { color: "#ede2f0", family: "Segoe UI, system-ui, sans-serif" },
+            margin: { t: 20, r: 20, b: 50, l: 50 },
+            xaxis: {
+                gridcolor: "#362643",
+                linecolor: "#2d1b39",
+                tickcolor: "#2d1b39",
+                tickfont: { color: "#73648b" },
+            },
+            yaxis: {
+                gridcolor: "#362643",
+                linecolor: "#2d1b39",
+                tickcolor: "#2d1b39",
+                tickfont: { color: "#73648b" },
+                rangemode: "tozero",
+            },
+            legend: {
+                bgcolor: "#1a1a2e",
+                bordercolor: "#453359",
+                borderwidth: 1,
+                borderradius: 8,
+                font: { color: "#cbd5e1" },
+            },
+            hovermode: "x unified",
+            hoverlabel: {
+                bgcolor: "#1a1a2e",
+                bordercolor: "#2d2d4e",
+                font: { color: "#e2e8f0" },
+            },
+        };
+
+        const config = {
+            responsive: true,
+            displayModeBar: true,
+            displaylogo: false,
+            modeBarButtonsToRemove: ["select2d", "lasso2d", "autoScale2d"],
+        };
+
+        Plotly.newPlot("plotly-chart", traces, layout, config);
+    </script>
+</body>
+</html>
